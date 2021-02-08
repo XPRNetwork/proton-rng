@@ -1,0 +1,11 @@
+contracts:
+  rng:
+    name: rng
+    wasm: rng.wasm
+    abi: rng.abi
+    fixturesDir: tests/fixtures/rng
+  randreceiver:
+    name: randreceiver
+    wasm: tests/contracts/randreceiver.wasm
+    abi: tests/contracts/randreceiver.abi
+    fixturesDir: tests/fixtures/randreceiver

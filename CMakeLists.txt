@@ -47,8 +47,8 @@ endif()
 
 ExternalProject_Add(
    contracts_project
-   SOURCE_DIR ${CMAKE_SOURCE_DIR}/eosio.evm
-   BINARY_DIR ${CMAKE_BINARY_DIR}/eosio.evm
+   SOURCE_DIR ${CMAKE_SOURCE_DIR}/rng
+   BINARY_DIR ${CMAKE_BINARY_DIR}/rng
    CMAKE_ARGS -DCMAKE_TOOLCHAIN_FILE=${EOSIO_CDT_ROOT}/lib/cmake/eosio.cdt/EosioWasmToolchain.cmake
    UPDATE_COMMAND ""
    PATCH_COMMAND ""
