@@ -1,7 +1,13 @@
 import crypto from 'crypto'
 import fs from 'fs'
 import path from 'path'
-import { PRIVATE_PEM_PATH } from './constants'
+import { PRIVATE_PEM_PATH, PUBLIC_PEM_PATH } from './constants'
+
+export const publicKey = crypto.createPublicKey({
+    key: fs.readFileSync(path.resolve(__dirname, PUBLIC_PEM_PATH)),
+    format: 'pem',
+    type: 'pkcs1'
+})
 
 const privateKey = crypto.createPrivateKey({
     key: fs.readFileSync(path.resolve(__dirname, PRIVATE_PEM_PATH)),
