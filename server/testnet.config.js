@@ -2,12 +2,6 @@ const endpoints = [
   "https://testnet.protonchain.com",
   "https://testnet.proton.pink.gg"
 ]
-const accounts = [
-  'bot1@active',
-  'bot2@active',
-  'bot3@active' ,
-  'bot4@active'
-]
 
 module.exports = {
     apps : [
@@ -19,8 +13,8 @@ module.exports = {
         env: {
           ENDPOINTS: endpoints.join(','),
           ACCOUNTS: accounts.join(','),
-          PRIVATE_PEM: 'testnet.private.pem',
-          PUBLIC_PEM: 'testnet.public.pem'
+          PRIVATE_PEM: '../testnet.private.pem',
+          PUBLIC_PEM: '../testnet.public.pem'
         }
       }
     ]
