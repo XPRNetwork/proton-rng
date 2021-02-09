@@ -14,7 +14,6 @@ module.exports = {
         watch: false,
         env: {
           ENDPOINTS: endpoints.join(','),
-          ACCOUNTS: accounts.join(','),
           PRIVATE_PEM: '../mainnet.private.pem',
           PUBLIC_PEM: '../mainnet.public.pem'
         }
