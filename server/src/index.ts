@@ -49,6 +49,7 @@ const process = async () => {
 export const processAndWait = async () => {
   await process()
   await wait(5000)
+  await processAndWait()
 }
 
 export const main = async () => {
