@@ -146,7 +146,7 @@ namespace proton {
       string modulus
     );
 
-    template<unsigned N, typename T>
+    template<unsigned long N, typename T>
     static inline string bin2hex(const array<T, N>& bin)
     {
       string res;

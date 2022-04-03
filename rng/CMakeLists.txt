@@ -1,9 +1,12 @@
-cmake_minimum_required( VERSION 3.5 )
+cmake_minimum_required(VERSION 3.16)
+set(CMAKE_DEPENDS_USE_COMPILER FALSE)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -Wno-unused-command-line-argument")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wno-unused-command-line-argument -DEOSIO_NO_RICARDIAN")
 
-project(proton)
+project(escrow)
 
-set(EOSIO_WASM_OLD_BEHAVIOR "Off")
-find_package(eosio.cdt)
+find_package(blanc)
+include(EosioWasmToolchain)
 
 add_contract(rng rng
    ${CMAKE_CURRENT_SOURCE_DIR}/src/rng.cpp
@@ -12,15 +15,6 @@ add_contract(rng rng
 
 target_include_directories(rng
    PUBLIC
-   ${CMAKE_CURRENT_SOURCE_DIR}/external
    ${CMAKE_CURRENT_SOURCE_DIR}/include
+   ${CMAKE_CURRENT_SOURCE_DIR}/external
 )
-
-target_compile_definitions(rng PRIVATE -D_LIBCPP_STRSTREAM -DBOOST_EXCEPTION_DISABLE=1 -D_GLIBCXX_SSTREAM=1 -D_LIBCPP_SSTREAM -DBOOST_NO_IOSTREAM -DBOOST_NO_STRINGSTREAM )
-
-set_target_properties(rng
-   PROPERTIES
-   RUNTIME_OUTPUT_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
-)
-
-target_compile_options( rng PUBLIC -R${CMAKE_CURRENT_SOURCE_DIR}/ricardian -R${CMAKE_CURRENT_BINARY_DIR}/ricardian)
