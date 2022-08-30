@@ -41,7 +41,22 @@ const process = async () => {
       }])
       return result
     } catch (e) {
-      console.error(e.json ? e.json.error.details[0].message : e.toString())
+      const error = e.json ? e.json.error.details[0].message : e.toString()
+      console.error(error)
+
+      if (error.indexOf('assertion failure with message') !== -1) {
+        await transact([{
+          account: CONTRACT,
+          name: 'killjobs',
+          data: {
+            job_ids: [row.id],
+          },
+          authorization: [{
+            actor: CONTRACT,
+            permission: CONTRACT_PERMISSION
+          }]
+        }])
+      }
     }
   }
 }
