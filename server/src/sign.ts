@@ -17,7 +17,7 @@ const privateKey = crypto.createPrivateKey({
 
 export const sign = (data: string) => {
   const sign = crypto.createSign('RSA-SHA256');
-  sign.update(data);
+  sign.update(String(data));
   sign.end();
   return sign.sign(privateKey).toString('hex');
 }
