@@ -1,4 +1,4 @@
-import { Api, JsonRpc, JsSignatureProvider } from '@protonprotocol/protonjs'
+import { Api, JsonRpc, JsSignatureProvider } from '@proton/js'
 import fetch from 'node-fetch'
 import { publicKey, sign } from './sign'
 import { ENDPOINTS, PRIVATE_KEYS, CONTRACT, CONTRACT_PERMISSION } from './constants'

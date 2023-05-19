@@ -34,7 +34,7 @@
     "typescript": "^4.1.2"
   },
   "dependencies": {
-    "@protonprotocol/protonjs": "^21.0.37",
+    "@proton/js": "^27.9.3",
     "ccxt": "^1.40.83",
     "dotenv": "^8.2.0",
     "eosjs": "^21.0.3",
