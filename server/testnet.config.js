@@ -1,5 +1,5 @@
 const endpoints = [
-  "https://testnet.protonchain.com",
+  "https://testnet-rpc.api.protondex.com",
   "https://testnet.proton.pink.gg"
 ]
 
