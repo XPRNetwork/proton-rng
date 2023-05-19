@@ -1,9 +1,8 @@
 import { Api, JsonRpc, JsSignatureProvider } from '@proton/js'
-import fetch from 'node-fetch'
 import { publicKey, sign } from './sign'
 import { ENDPOINTS, PRIVATE_KEYS, CONTRACT, CONTRACT_PERMISSION } from './constants'
 
-const rpc = new JsonRpc(ENDPOINTS, { fetch: fetch })
+const rpc = new JsonRpc(ENDPOINTS)
 const api = new Api({ rpc, signatureProvider: new JsSignatureProvider(PRIVATE_KEYS as any) })
 
 const wait = async (ms: number) => new Promise(resolve => setTimeout(resolve, ms))
@@ -27,7 +26,7 @@ const process = async () => {
 
   for (const row of rows) {
     try {
-      const result = await transact([{
+      await transact([{
         account: CONTRACT,
         name: 'setrand',
         data: {
@@ -39,7 +38,7 @@ const process = async () => {
           permission: CONTRACT_PERMISSION
         }]
       }])
-      return result
+      return
     } catch (e) {
       const error = e.json ? e.json.error.details[0].message : e.toString()
       console.error(error)

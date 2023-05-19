@@ -35,7 +35,7 @@
   },
   "dependencies": {
     "@proton/js": "^27.9.3",
-    "ccxt": "^1.40.83",
+    "ccxt": "^3.1.1",
     "dotenv": "^8.2.0",
     "eosjs": "^21.0.3",
     "lodash.throttle": "^4.1.1",
