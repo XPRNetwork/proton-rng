@@ -1,3 +1,6 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 if (!process.env.PRIVATE_PEM) {
     console.error('PRIVATE_PEM path must be provided in *.config.js')
     process.exit(0)

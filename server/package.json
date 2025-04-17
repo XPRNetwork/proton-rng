@@ -19,7 +19,6 @@
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
-  "peerDependencies": {},
   "name": "server",
   "author": "Syed Jafri",
   "module": "dist/server.esm.js",
@@ -35,7 +34,7 @@
   },
   "dependencies": {
     "@proton/js": "^27.9.3",
-    "dotenv": "^8.2.0",
+    "dotenv": "^8.6.0",
     "lodash.throttle": "^4.1.1"
   }
 }
