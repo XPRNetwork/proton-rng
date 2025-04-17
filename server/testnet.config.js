@@ -11,6 +11,7 @@ module.exports = {
         script: 'dist/index.js',
         node_args : '-r dotenv/config',
         watch: false,
+        log_date_format: 'YYYY-MM-DD HH:mm Z',
         env: {
           ENDPOINTS: endpoints.join(','),
           PRIVATE_PEM: '../testnet.private.pem',
