@@ -1,6 +1,7 @@
 const endpoints = [
-  "https://testnet-rpc.api.protondex.com",
-  "https://testnet.proton.pink.gg"
+  "https://testnet-api.alvosec.com",
+  "https://tn1.protonnz.com",
+  "https://proton-api-testnet.eosiomadrid.io"
 ]
 
 module.exports = {
