@@ -1,7 +1,7 @@
 const endpoints = [
-  "https://mainnet-rpc.api.protondex.com",
-  "https://proton.greymass.com",
-  "https://proton.eoscafeblock.com"
+  "https://api.protonnz.com",
+  "https://proton.eosusa.io",
+  "https://proton.protonuk.io"
 ]
 
 module.exports = {
